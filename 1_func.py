@@ -18,3 +18,20 @@ def func1
     number = int(input("Введите число: "))
     result = sum_of_prime_divisors(number)
     print(number, ":", result)
+
+def func2
+    def count_odd_digits(num):
+        count = 0
+        num = abs(num)  
+
+        while num > 0:
+            digit = num % 10 
+            if digit > 3 and digit % 2 != 0:
+                count += 1
+            num //= 10
+
+        return count
+
+    number = int(input("Введите число: "))
+    result = count_odd_digits(number)
+    print(number, ":", result)
