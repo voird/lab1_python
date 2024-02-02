@@ -14,10 +14,7 @@ def func1
             if number % i == 0 and is_prime(i):
                 prime_divisors.append(i)
         return sum(prime_divisors)
-    number = int(input("Введите число: "))
-    result = sum_of_prime_divisors(number)
-    print(number, ":", result)
-
+        
 def func2
     def count_odd_digits(num):
         count = 0
@@ -30,6 +27,4 @@ def func2
             num //= 10
 
         return count
-    number = int(input("Введите число: "))
-    result = count_odd_digits(number)
-    print(number, ":", result)
+
