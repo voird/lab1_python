@@ -1,0 +1,6 @@
+import re
+
+def find_dates(input_string):
+    pattern = r"\d{1,2} (?:января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря) \d{4}"
+    dates = re.findall(pattern, input_string)
+    return dates
