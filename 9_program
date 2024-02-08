@@ -4,3 +4,4 @@ def sort_by_length(strings):
 
 input_list = input("Введите список строк: ").split(sep='.')
 sorted_by_length = sort_by_length(input_list)
+print("Упорядочено по длине строки:", sorted_by_length)
