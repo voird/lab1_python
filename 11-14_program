@@ -1,4 +1,4 @@
-#В порядке увеличения разницы между количеством согласных и количеством гласных букв в строке:
+#1 В порядке увеличения разницы между количеством согласных и количеством гласных букв в строке:
 def diff_sort(input_string):
     vowels = "aeiouAEIOU"
     consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
@@ -6,3 +6,9 @@ def diff_sort(input_string):
     diff_count = lambda s: abs(sum(1 for char in s if char in consonants) - sum(1 for char in s if char in vowels))
 
     return sorted(input_string.split(), key=diff_count)
+
+#3 В порядке увеличения разницы между количеством сочетаний «гласная-согласная» и «согласная-гласная» в строке
+def combinations_sort(input_string):
+    count_combinations = lambda s: abs(sum(1 for i in range(len(s)-1) if (s[i] in vowels and s[i+1] in consonants) or (s[i] in consonants and s[i+1] in vowels)))
+
+    return sorted(input_string.split(), key=count_combinations)
