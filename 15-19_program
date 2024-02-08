@@ -37,3 +37,26 @@ def divisors_list(numbers):
         result.append(divisors)
 
     return result
+def switch_case(case, input_list):
+    switch = {
+        1: count_elements_after_max,
+        2: move_elements_to_end_before_min,
+        3: find_max_in_interval,
+        4: left_neighbor,
+        5: divisors_list
+    }
+    return switch.get(case)(input_list)
+
+input_str = input("Введите список чисел через пробел: ")
+input_list = [int(x) for x in input_str.split()]
+
+print("Вы ввели:", input_list)
+print("1. Необходимо найти количество элементов, расположенных после последнего максимального\n"
+      "2. Необходимо разместить элементы, расположенные до минимального, в конце массива \n"
+      "3. Необходимо найти максимальный из элементов в этом интервале\n"
+      "4. Вывести индексы элементов, которые меньше своего левого соседа, и количество таких чисел \n"
+      "5. построить список всех положительных простых делителей элементов списка без повторений")
+
+numer = int(input("Выберите номер операции: "))
+result = switch_case(numer, input_list)
+print(result)
