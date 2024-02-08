@@ -1,1 +1,10 @@
+import re
+#1 Дана строка. Необходимо найти максимальное из имеющихся в ней
+#вещественных чисел.
 
+def find_max_float(string):
+    floats = re.findall(r'\d+\.\d+', string)
+    if floats:
+        return max(map(float, floats))
+    else:
+        return None
