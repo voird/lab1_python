@@ -27,4 +27,16 @@
             num //= 10
 
         return count
+#Функция 3. Найти произведение таких делителей числа, сумма цифр которых меньше, чем сумма цифр исходного числа.
+def find_elems_of_divisors(num):
+    def sum_of_digits(n):
+        return sum(int(digit) for digit in str(n))
 
+    original_sum = sum_of_digits(num)
+    product = 1
+
+    for i in range(1, num + 1):
+        if num % i == 0 and sum_of_digits(i) < original_sum:
+            product *= i
+
+    return product
