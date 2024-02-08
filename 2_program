@@ -1,17 +1,31 @@
 import re
-def count_russian_chars(string): #считает общее кол-во русских символов
+def count_russian_chars(string):
     counter = 0
     for char in string:
         if 'а' <= char <= 'я' or 'А' <= char <= 'Я':
             counter += 1
     return counter
 
-def is_palindrome(s):  #проверяет образуют ли строчные символы латиницы палиндром
-    only_latin = ''.join(c for c in s if c.isalpha() and c.islower())
+def is_palindrome(s):
+    only_latin = ''.join(c for c in s if c.isalpha() and c.islower() and 'a' <= c <= 'z')
     print(only_latin)
     return only_latin == only_latin[::-1]
 
-def find_dates(string): №Найти в тексте даты формата "день.месяц.год"
+def find_dates(string):
     pattern = r'\b\d{1,2}\.\d{1,2}\.\d{4}\b'
     dates = re.findall(pattern, string)
     return dates
+
+def switch_case(case):
+    switch = {
+        1: count_russian_chars(text),
+        2: is_palindrome(text),
+        3: find_dates(text),
+    }
+    return switch.get(case, "Неверно введено число")
+
+text = input("Введите текст: ")
+print("Вы ввели:", text, "\n", "Напиши число, соответствующее необходимой функции: \n 1. Посчитать общее кол-во русских символов\n 2. Проверить образуют ли строчные символы латиницы палиндром\n 3. Найти в тексте даты формата день.месяц.год \n")
+numer = int(input())
+result = switch_case(numer)
+print(result) 
