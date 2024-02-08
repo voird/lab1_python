@@ -17,3 +17,20 @@ def find_min_rational(string):
         return min(map(eval, rationals))
     else:
         return None
+
+# 3 Дана строка. Необходимо найти наибольшее количество идущих
+#подряд цифр.
+def find_max_digits(string):
+    digits = re.findall(r'\d+', string)
+    if digits:
+        max_count = 0
+        current_count = 0
+        for digit in digits:
+            if len(digit) > 1:
+                current_count = len(digit)
+            else:
+                current_count += 1
+            max_count = max(max_count, current_count)
+        return max_count
+    else:
+        return 0
