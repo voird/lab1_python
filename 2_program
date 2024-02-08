@@ -1,1 +1,6 @@
-
+def count_russian_chars(string):
+    counter = 0
+    for char in string:
+        if 'а' <= char <= 'я' or 'А' <= char <= 'Я':
+            counter += 1
+    return counter
