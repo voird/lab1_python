@@ -1,5 +1,5 @@
 #вариант 1
-def func1
+#Функция 1. Найти сумму простых делителей числа
     def sum_of_prime_divisors(number):
         def is_prime(n):
             if n < 2:
@@ -15,7 +15,7 @@ def func1
                 prime_divisors.append(i)
         return sum(prime_divisors)
         
-def func2
+#Функция 2. Найти количество нечетных цифр числа, больших 3 
     def count_odd_digits(num):
         count = 0
         num = abs(num)  
