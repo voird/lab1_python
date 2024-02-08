@@ -1,0 +1,6 @@
+def count_elements_after_max(arr):
+    if not arr:
+        return 0
+
+    max_index = max(range(len(arr)), key=lambda i: arr[i])
+    return len(arr) - 1 - max_index
