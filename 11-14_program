@@ -1,8 +1,8 @@
+vowels = "aeiouAEIOU"
+consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+
 #1 В порядке увеличения разницы между количеством согласных и количеством гласных букв в строке:
 def diff_sort(input_string):
-    vowels = "aeiouAEIOU"
-    consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
-
     diff_count = lambda s: abs(sum(1 for char in s if char in consonants) - sum(1 for char in s if char in vowels))
 
     return sorted(input_string.split(), key=diff_count)
