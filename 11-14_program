@@ -7,6 +7,15 @@ def diff_sort(input_string):
 
     return sorted(input_string.split(), key=diff_count)
 
+#2 В порядке увеличения квадратичного отклонения среднего веса ASCII-кода символа строки от среднего веса ASCII-кода символа первой строки
+def ascii_sort(strings):
+    mean_ascii = lambda s: sum(ord(char) for char in s) / len(s)
+    first_mean = mean_ascii(strings[0])
+
+    deviation = lambda s: (mean_ascii(s) - first_mean) ** 2
+
+    return sorted(strings, key=deviation)
+
 #3 В порядке увеличения разницы между количеством сочетаний «гласная-согласная» и «согласная-гласная» в строке
 def combinations_sort(input_string):
     count_combinations = lambda s: abs(sum(1 for i in range(len(s)-1) if (s[i] in vowels and s[i+1] in consonants) or (s[i] in consonants and s[i+1] in vowels)))
