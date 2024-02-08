@@ -1,4 +1,6 @@
 import re
+
+#1 Дана строка. Необходимо найти общее количество русских символов.
 def count_russian_chars(string):
     counter = 0
     for char in string:
@@ -6,11 +8,14 @@ def count_russian_chars(string):
             counter += 1
     return counter
 
+#2 Дана строка. Необходимо проверить образуют ли строчные символы
+латиницы палиндром.
 def is_palindrome(s):
     only_latin = ''.join(c for c in s if c.isalpha() and c.islower() and 'a' <= c <= 'z')
     print(only_latin)
     return only_latin == only_latin[::-1]
 
+#3 Найти в тексте даты формата «день.месяц.год».
 def find_dates(string):
     pattern = r'\b\d{1,2}\.\d{1,2}\.\d{4}\b'
     dates = re.findall(pattern, string)
