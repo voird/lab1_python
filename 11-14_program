@@ -1,7 +1,7 @@
 vowels = "aeiouAEIOU"
 consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
 
-#1 В порядке увеличения разницы между количеством согласных и количеством гласных букв в строке:
+#1 В порядке увеличения разницы между количеством согласных и количеством гласных букв в строке
 def diff_sort(input_string):
     diff_count = lambda s: abs(sum(1 for char in s if char in consonants) - sum(1 for char in s if char in vowels))
 
@@ -27,3 +27,18 @@ def mirror__sort(input_string):
     count_mirror_triples = lambda s: sum(1 for i in range(len(s)-2) if s[i:i+3] == s[i:i+3][::-1])
 
     return sorted(input_string.split(), key=count_mirror_triples)
+
+def switch_case(case):
+    switch = {
+        1: diff_sort(list),
+        2: ascii_sort(list),
+        3: combinations_sort(list),
+        4: mirror__sort(list)
+    }
+    return switch.get(case, "Неверно введено число")
+
+list = input("Введите текст: ")
+print("Вы ввели:", list, "\n", "1. В порядке увеличения разницы между количеством согласных и количеством гласных букв в строке\n 2. В порядке увеличения квадратичного отклонения среднего веса ASCII-кода символа строки от среднего веса ASCII-кода символа первой строки\n 3. порядке увеличения разницы между количеством сочетаний «гласная-согласная» и «согласная-гласная» в строке\n 4. В порядке увеличения среднего количества «зеркальных» троек (например, «ada») символов в строке")
+numer = int(input())
+result = switch_case(numer)
+print(result) 
