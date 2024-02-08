@@ -1,1 +1,7 @@
+#Функция для упорядочивания списка строк по количеству слов в строке:
+def sort_by_word_count(strings):
+    return sorted(strings, key=lambda s: len(s.split()))
 
+input_list = input("Введите список строк: ").split(sep='.')
+sorted_by_word_count = sort_by_word_count(input_list)
+print("Упорядочено по количеству слов в строке:", sorted_by_word_count)
