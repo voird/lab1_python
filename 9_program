@@ -1,1 +1,6 @@
+#Функция для упорядочивания списка строк по длине строки:
+def sort_by_length(strings):
+    return sorted(strings, key=len)
 
+input_list = input("Введите список строк: ").split(sep='.')
+sorted_by_length = sort_by_length(input_list)
