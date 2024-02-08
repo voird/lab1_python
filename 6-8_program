@@ -8,3 +8,12 @@ def find_max_float(string):
         return max(map(float, floats))
     else:
         return None
+
+#2 Дана строка. Необходимо найти минимальное из имеющихся в ней
+#рациональных чисел.
+def find_min_rational(string):
+    rationals = re.findall(r'\d+/\d+', string)
+    if rationals:
+        return min(map(eval, rationals))
+    else:
+        return None
