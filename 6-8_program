@@ -1,6 +1,7 @@
-import re
 #1 Дана строка. Необходимо найти максимальное из имеющихся в ней
 #вещественных чисел.
+
+import re
 
 def find_max_float(string):
     floats = re.findall(r'\d+\.\d+', string)
@@ -8,6 +9,7 @@ def find_max_float(string):
         return max(map(float, floats))
     else:
         return None
+
 
 #2 Дана строка. Необходимо найти минимальное из имеющихся в ней
 #рациональных чисел.
@@ -17,9 +19,10 @@ def find_min_rational(string):
         return min(map(eval, rationals))
     else:
         return None
-
+    
 # 3 Дана строка. Необходимо найти наибольшее количество идущих
 #подряд цифр.
+    
 def find_max_digits(string):
     digits = re.findall(r'\d+', string)
     if digits:
@@ -34,3 +37,17 @@ def find_max_digits(string):
         return max_count
     else:
         return 0
+    
+def switch_case(case):
+    switch = {
+        1: find_max_float(text),
+        2: find_min_rational(text),
+        3: find_max_digits(text),
+    }
+    return switch.get(case, "Неверно введено число")
+
+text = input("Введите текст: ")
+print("Вы ввели:", text, "\n", "#1 Дана строка. Необходимо найти максимальное из имеющихся в ней вещественных чисел.\n #2 Дана строка. Необходимо найти минимальное из имеющихся в нейрациональных чисел.\n #3 Дана строка. Необходимо найти наибольшее количество идущих подряд цифр.")
+numer = int(input())
+result = switch_case(numer)
+print(result) 
