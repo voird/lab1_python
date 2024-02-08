@@ -1,10 +1,11 @@
-def count_russian_chars(string):
+def count_russian_chars(string): #считает общее кол-во русских символов
     counter = 0
     for char in string:
         if 'а' <= char <= 'я' or 'А' <= char <= 'Я':
             counter += 1
     return counter
 
-def is_palindrome(s):
-    s_lower = s.lower()
-    return s_lower == s_lower[::-1]
+def is_palindrome(s):  #проверяет образуют ли строчные символы латиницы палиндром
+    only_latin = ''.join(c for c in s if c.isalpha() and c.islower())
+    print(only_latin)
+    return only_latin == only_latin[::-1]
