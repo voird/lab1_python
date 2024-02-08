@@ -9,3 +9,8 @@ def is_palindrome(s):  #проверяет образуют ли строчны�
     only_latin = ''.join(c for c in s if c.isalpha() and c.islower())
     print(only_latin)
     return only_latin == only_latin[::-1]
+
+def find_dates(string):
+    pattern = r'\b\d{1,2}\.\d{1,2}\.\d{4}\b'
+    dates = re.findall(pattern, string)
+    return dates
