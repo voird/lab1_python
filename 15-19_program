@@ -4,3 +4,10 @@ def count_elements_after_max(arr):
 
     max_index = max(range(len(arr)), key=lambda i: arr[i])
     return len(arr) - 1 - max_index
+
+def move_elements_to_end_before_min(arr):
+    if not arr:
+        return arr
+
+    min_index = min(range(len(arr)), key=lambda i: arr[i])
+    return arr[min_index+1:] + arr[:min_index+1]
