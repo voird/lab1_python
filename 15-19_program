@@ -1,3 +1,4 @@
+#1. Необходимо найти количество элементов, расположенных после последнего максимального
 def count_elements_after_max(arr):
     if not arr:
         return 0
@@ -5,23 +6,26 @@ def count_elements_after_max(arr):
     max_index = max(range(len(arr)), key=lambda i: arr[i])
     return len(arr) - 1 - max_index
 
+#2 Необходимо разместить элементы, расположенные до минимального, в конце массива
 def move_elements_to_end_before_min(arr):
     if not arr:
         return arr
 
     min_index = min(range(len(arr)), key=lambda i: arr[i])
     return arr[min_index+1:] + arr[:min_index+1]
-
+#3 Необходимо найти максимальный из элементов в этом интервале
 def left_neighbor(arr):
     result_indices = [i for i in range(1, len(arr)) if arr[i] < arr[i-1]]
     return result_indices, len(result_indices)
 
+#4 Вывести индексы элементов, которые меньше своего левого соседа, и количество таких чисел
 def find_max_in_interval(arr):
     a = int(input("Введите интервал "))
     b = int(input())
     interval = [x for x in arr if a <= x <= b]
     return max(interval) if interval else None
 
+#5 построить список всех положительных простых делителей элементов списка без повторений
 def divisors_list(numbers):
     def is_prime(n):
         if n < 2:
@@ -37,6 +41,7 @@ def divisors_list(numbers):
         result.append(divisors)
 
     return result
+
 def switch_case(case, input_list):
     switch = {
         1: count_elements_after_max,
